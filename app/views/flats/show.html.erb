@@ -1,0 +1,10 @@
+<div class="container p-0">
+  <h2><%= @flat.name %></h2>
+  <p><%= @flat.address %></p>
+  <div class="price_guest d-flex">
+    <p class="mr-3" >Number of guest: <%= @flat.number_of_guest %></p>
+    <p>Price per night: <%= @flat.price_per_night %></p>
+  </div>
+  <hr>
+  <p><%= link_to "Back to Flat list", flats_path %></p>
+</div>

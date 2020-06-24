@@ -1,0 +1,25 @@
+
+<div class="container p-0">
+  <% if @search_result && @search_result != "" %>
+    <h2>search result</h2>
+  <% end %>
+  <ul class="p-0">
+    <% @flats.each do |f| %>
+    <li class="list-style">
+      <h2><%= f.name%></h2>
+      <p><%= f.address %></p>
+      <div class="price_guest d-flex">
+        <p class="mr-3" >Number of guest: <%= f.number_of_guest %></p>
+        <p>Price per night: <%= f.price_per_night %></p>
+      </div>
+      <div class="control d-flex">
+        <p class=" mr-3"><%= link_to "More info",flat_path(f) %></p>
+        <p class=" mr-3"><%= link_to "Edit", edit_flat_path(f) %></p>
+        <p><%= link_to "Delete", flat_path(f), method: :delete, data: { comfirm: "Don't regret!"} %></p>
+      </div>
+      <hr>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
